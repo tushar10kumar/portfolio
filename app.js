@@ -768,7 +768,7 @@
             </div>
 
             <div style="margin-top: 10px;">
-              <a href="Tushar_Kumar_Kannojia_Resume.pdf" download="Tushar_Kumar_Kannojia_Resume.pdf" class="btn-download-resume-drawer" style="text-decoration:none">
+              <a href="Tushar_Kumar_Kannojia_Resume.pdf?v=2" download="Tushar_Kumar_Kannojia_Resume.pdf" class="btn-download-resume-drawer" style="text-decoration:none">
                 📥 DOWNLOAD RESUME (PDF)
               </a>
             </div>
