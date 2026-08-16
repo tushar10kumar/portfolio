@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tushar Kumar Kannojia · Full-Stack & AI Systems Architect</title>
+  <meta name="description" content="Portfolio of Tushar Kumar Kannojia — B.Tech CSE @ IIITDM Jabalpur, AI & Systems Architect, Uber SHE++ Top 100, creator of GenRAG, CampusOps, and NutriLens." />
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Tushar Kumar Kannojia · Full-Stack & AI Portfolio" />
+  <meta property="og:description" content="Explore Tushar's interactive engineering graph: GenRAG, CampusOps, NutriLens, 600+ DSA stats, and technical capabilities." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="profile.jpg" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Fullscreen Interactive Canvas -->
+  <canvas id="mapCanvas"></canvas>
+  <div class="canvas-overlay-vignette"></div>
+
+  <!-- Header Navigation Bar -->
+  <header class="header-bar">
+    <div class="brand-wordmark" id="brandHome" title="Reset View & Go to Overview">
+      <img src="profile.jpg" alt="Tushar Kumar Kannojia" class="brand-avatar" />
+      <div class="brand-text-group">
+        <span class="brand-title">TUSHAR KANNOJIA</span>
+        <span class="brand-tagline">AI & SYSTEMS ARCHITECT</span>
+      </div>
+    </div>
+
+    <nav class="nav-tabs-wrapper" id="navTabs">
+      <button class="nav-tab active" data-tab="overview"><i></i>OVERVIEW</button>
+      <button class="nav-tab" data-tab="ai"><i></i>AI / RAG</button>
+      <button class="nav-tab" data-tab="systems"><i></i>SYSTEMS</button>
+      <button class="nav-tab" data-tab="vision"><i></i>VISION</button>
+      <button class="nav-tab" data-tab="experience"><i></i>EXPERIENCE</button>
+      <button class="nav-tab" data-tab="stack"><i></i>SKILLS</button>
+      <button class="nav-tab" data-tab="contact"><i></i>CONTACT</button>
+    </nav>
+
+    <div class="header-actions">
+      <!-- Download Resume Button -->
+      <a href="Tushar_Kumar_Kannojia_Resume.pdf" download="Tushar_Kumar_Kannojia_Resume.pdf" class="icon-btn btn-resume" id="btnHeaderResume" title="Download Official PDF Resume">
+        <span>📄</span> <span>RESUME</span>
+      </a>
+
+      <!-- Theme Switcher -->
+      <button class="icon-btn" id="themeToggle" title="Toggle Light/Dark Theme">
+        <span id="themeIcon">☀</span> <span id="themeText">LIGHT</span>
+      </button>
+      
+      <!-- Signal / Contact Button -->
+      <button class="icon-btn btn-signal" id="btnSignal">
+        ⚡ CONTACT
+      </button>
+    </div>
+  </header>
+
+  <!-- Minimap HUD (Top Left Radar) -->
+  <div class="minimap-hud">
+    <div class="minimap-header">
+      <span>SYSTEM RADAR</span>
+      <div class="minimap-status-dot" title="Radar Active"></div>
+    </div>
+    <canvas id="miniCanvas"></canvas>
+  </div>
+
+  <!-- Dynamic Hover Tooltip -->
+  <div id="canvasTooltip">
+    <div class="tip-title" id="tipTitle">GenRAG</div>
+    <div class="tip-category" id="tipCategory">AI SYSTEM</div>
+    <div class="tip-action" id="tipAction">CLICK TO EXAMINE DOSSIER ↗</div>
+  </div>
+
+  <!-- Sliding Side Dossier Drawer -->
+  <aside class="dossier-drawer" id="dossierDrawer">
+    <div class="drawer-top-nav">
+      <span class="drawer-badge" id="drawerBadge">CORE PROTOCOL</span>
+      <button class="btn-close-drawer" id="btnCloseDrawer">✕ CLOSE</button>
+    </div>
+    
+    <h2 class="drawer-title" id="drawerTitle">Tushar Kumar Kannojia</h2>
+    <p class="drawer-tagline" id="drawerTagline">B.Tech CSE @ IIITDM Jabalpur (2023 - 2027) | Full-Stack & AI Systems Architect</p>
+
+    <!-- Profile Photo & Hero Banner -->
+    <div class="drawer-hero-frame" id="drawerHero">
+      <img src="profile.jpg" alt="Tushar Kumar Kannojia" />
+    </div>
+
+    <!-- Resume Download Bar inside Drawer -->
+    <div class="drawer-actions-row">
+      <a href="Tushar_Kumar_Kannojia_Resume.pdf" download="Tushar_Kumar_Kannojia_Resume.pdf" class="btn-download-resume-drawer">
+        📥 DOWNLOAD RESUME (PDF)
+      </a>
+    </div>
+
+    <div class="drawer-section-label">KEY SKILLS & TECH STACK</div>
+    <div class="tech-pills-container" id="drawerTechStack">
+      <!-- Populated dynamically -->
+    </div>
+
+    <div class="drawer-section-label">HIGHLIGHTED MODULES & DOSSIERS</div>
+    <div class="cards-stack" id="drawerCardsStack">
+      <!-- Populated dynamically -->
+    </div>
+
+    <button class="btn-open-editorial" id="btnOpenEditorial">
+      <span>EXPLORE DETAILED CASE STUDY</span> ↗
+    </button>
+  </aside>
+
+  <!-- Full Editorial Deep-Dive Modal Overlay -->
+  <div class="editorial-overlay" id="editorialOverlay">
+    <div class="editorial-top-bar">
+      <button class="btn-back-map" id="btnBackMap">
+        ↖ RETURN TO SYSTEM MAP
+      </button>
+      <span class="editorial-kicker" id="editorialTopKicker">PROFILE & CASE STUDY DOSSIER</span>
+      
+      <div style="display: flex; gap: 8px;">
+        <a href="Tushar_Kumar_Kannojia_Resume.pdf" download="Tushar_Kumar_Kannojia_Resume.pdf" class="btn-back-map" style="background: rgba(31, 117, 254, 0.2); border-color: var(--tech-blue);">
+          📄 DOWNLOAD RESUME
+        </a>
+        <button class="icon-btn btn-signal" id="btnEditorialSignal">
+          ⚡ CONNECT
+        </button>
+      </div>
+    </div>
+
+    <div class="editorial-container" id="editorialContainer">
+      <!-- Dynamic Editorial Content -->
+    </div>
+  </div>
+
+  <!-- Floating Bottom Navigation Hint Bar -->
+  <div class="hud-bottom-bar">
+    <span>NAVIGATE: <span class="hud-hint-key">DRAG / SCROLL</span> TO PAN • <span class="hud-hint-key">CLICK NODE</span> FOR DOSSIER</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
